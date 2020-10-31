@@ -1,0 +1,84 @@
+format_version: 3
+pipelines:
+  template:
+    group: defaultGroup
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git:
+        git: https://bitbucket.org/vijay256/demo.git
+        username: vijay256
+        shallow_clone: false
+        auto_update: true
+        branch: master
+        encrypted_password: AES:ZXuMu5mVnwBgEuC9C7zccg==:9g6/SAKI9rynDGfh551jyA==
+    stages:
+    - clean:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          clean:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - clean
+                command: mvn
+                run_if: passed
+    - compile:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          compile:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - compile
+                command: mvn
+                run_if: passed
+    - package:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          package:
+            timeout: 0
+            artifacts:
+            - build:
+                source: '**/*.war'
+                destination: pkg
+            tasks:
+            - exec:
+                arguments:
+                - package
+                command: mvn
+                run_if: passed
+    - Dockerization:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          dockerization:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - docker build -t afcs:latest .
+                command: sh
+                run_if: passed

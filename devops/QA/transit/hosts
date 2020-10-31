@@ -1,0 +1,5 @@
+[QA]
+18.222.119.34 ansible_ssh_user=ec2-user
+
+[Demo]
+13.233.186.38 ansible_ssh_user=ec2-user

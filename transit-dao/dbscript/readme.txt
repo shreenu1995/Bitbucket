@@ -1,0 +1,6 @@
+Db scripts should be executed sequentially in the below order
+01_Prepaid_DB_Clean_Script.sql
+02_Prepaid_DB_Create_Script.sql
+03_Prepaid_DB_StoreProc_Script.sql
+04_Prepaid_DB_Triggers_Script.sql
+05_Prepaid_DB_MasterData_Script.sql

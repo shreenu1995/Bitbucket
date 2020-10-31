@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: afcs
+  labels:
+    app: afcs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: afcs
+  template:
+    metadata:
+      labels:
+        app: afcs
+    spec:
+      containers:
+         - name: afcs
+           image: vijaychander652/afcs:latest
+           ports:
+           - containerPort: 9012
+      imagePullSecrets:
+         - name: reddy
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: afcs
+  labels:
+    app: afcs
+spec:
+  loadBalancerIP:
+  type: LoadBalancer
+  ports:
+  - port: 9012
+  selector:
+    app: afcs

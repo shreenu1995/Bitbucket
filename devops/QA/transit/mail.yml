@@ -1,0 +1,24 @@
+- hosts: localhost
+  tasks:
+    - name: Make sure that we can connect to the machine
+      ping:
+
+    - name: shell script execution
+      shell: sh test.sh
+      register: find_out
+
+    - debug:
+        var: find_out
+
+    - local_action: copy content={{ find_out }} dest=/tmp/test2
+
+    - name: Sending an e-mail using Gmail SMTP servers
+      mail:
+        host: smtp.gmail.com
+        port: 587
+        username: username@gmail.com
+        password: mysecret
+        to: John Smith <john.smith@example.com>
+        subject: Ansible-report
+        body: System {{ find_out }} has been successfully provisioned.
+      delegate_to: localhost

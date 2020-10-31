@@ -1,0 +1,6 @@
+Project homepage: https://mvnrepository.com/artifact/commons-codec/commons-codec/1.12
+
+Sources: https://mvnrepository.com/artifact/commons-codec/commons-codec
+
+License:
+Licensed under Apache License 2.0

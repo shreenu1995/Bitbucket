@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    environment {
+        BRANCH_NAME = 'master'
+        REPO_URL= 'https://vijay256:vijay321@bitbucket.org/vijay256/demo.git'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                //checkout([$class: 'GitSCM', branches: [[name: env.BRANCH_NAME]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'SubmoduleOption', recursiveSubmodules: true, reference: '', trackingSubmodules: false]], submoduleCfg: [], userRemoteConfigs: [[url: env.REPO_URL]]])
+                checkout([$class: 'GitSCM', 
+        additionalCredentials: [], 
+        excludedCommitMessages: '', 
+        excludedRegions: '', 
+        excludedRevprop: '', 
+        excludedUsers: '', 
+        filterChangelog: false, 
+        ignoreDirPropChanges: false, 
+        includedRegions: '', 
+        locations: [[cancelProcessOnExternalsFail: true, 
+        credentialsId: '234243-45654-234randomstuff', 
+        depthOption: 'infinity', 
+        ignoreExternalsOption: true, 
+        local: '.', 
+        remote: 'https://vijay256:vijay321@bitbucket.org/vijay256/demo']],
+        quietOperation: true, 
+        workspaceUpdater: [$class: 'UpdateUpdater']])
+             }
+        }
+    }
+}

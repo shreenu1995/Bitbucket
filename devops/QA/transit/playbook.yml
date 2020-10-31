@@ -1,0 +1,30 @@
+- hosts: QA
+  vars:
+      app: "afcs"
+      build_number: "latest"
+  become_user: ec2-user
+  become: true
+  tasks:
+    - name: Make sure that we can connect to the machine
+      ping: 
+      
+    - name: copy deploy file
+      copy:
+        src: deploy.yml
+        dest: /tmp/
+
+    - name: creating service
+      shell: kubectl get deployment {{app}}
+      register: result
+      ignore_errors: True     
+
+    - shell: kubectl create -f /tmp/deploy.yml --record=true
+      when: result is failed
+
+    - shell: kubectl set image deployment/{{app}} {{app}}=vijaychander652/{{app}}:{{build_number}}
+      when: result is succeeded
+      
+    - name: Remove the Deploy file
+      file:
+        path: /tmp/deploy.yml
+        state: absent

@@ -1,0 +1,35 @@
+
+                    Card Holder Account: INMATE                                           
+                    From: &fromDate | To: $toDate                                     
+                    ______________________________________________________________        
+
+                                                                Debit          	Credit         
+
+                    Network Transaction, $:                     $networkTxnDr  	$networkTxnCr         
+                    Acquirer Fee, $:                			$acquirerFeeDr	$acquirerFeeCr                        
+                    Load Fee Charge To Agent, $:                $lFeeToAgentDr	$lFeeToAgentCr                      
+                    Card Transfer From, $:              		$cardTranFrDr	$cardTranFrCr                          
+                    Card Transfer To, $:                        $cardTranToDr	$cardTranToCr                          
+                    Card Load, $:                           	$cardLoadDr		$cardLoadCr                          
+                    Card Reversal, $:                         	$cardReversalDr	$cardReversalCr                         
+                    Manual Debit Customer, $:                 	$manDebitCusDr	$manDebitCuCr                          
+                    Manual Credit Customer, $:                  $manCreditCusDr	$manCreditCusCr                          
+                    Manual Debit Agent, $:                  	$manDebitAgtDr	$manDebitAgtCr                          
+                    Manual Credit Agent, $:                     $manCreditAgtDr	$manCreditAgtCr           
+                    External Card Load, $:                      $extCardLoadDr	$extCardLoadCr      
+                    External Load Reversal, $:                  $extLoadRevDr	$extLoadRevCr           
+                    Acquirer Transaction Amount Reversal, $:    $acTxnAmRevDr	$acTxnAmRevCr         
+                    Acquirer Fee Reversal, $:                   $acFeeRevDr		$acFeeRevCr           
+                    Card hold Fee Reversal, $:                  $cardFeeRevDr	$cardFeeRevCr          
+
+                    __________________________________________________
+
+                    Totals, $:                                  $totalDebit     $totalCredit      
+
+                    Total Fee/Income, $:                        $totalFee                    
+                    Network Total, $:                           $networkTotal                    
+                    ___________________________________________________                       
+
+                    Total Loads, $:                             $totalLoads                    
+                    Opening Balance, $:                         $openingBal                    
+                    Closing Balance, $:                         $closingBal                    

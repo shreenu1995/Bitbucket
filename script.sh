@@ -1,0 +1,1 @@
+nohup java -jar /opt/artifacts/pipelines/demo/42/Package/1/Package/pkg/transit-web/target/transit-web.war > web.log &

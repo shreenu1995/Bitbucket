@@ -1,0 +1,7 @@
+Project homepage: https://mvnrepository.com/artifact/junit/junit/4.10
+
+
+Sources: https://mvnrepository.com/artifact/junit/junit
+
+License:
+Licensed under CPL

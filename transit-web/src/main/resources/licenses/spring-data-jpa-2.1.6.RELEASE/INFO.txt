@@ -1,0 +1,6 @@
+Project homepage: https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa/2.1.6.RELEASE
+
+Sources: https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+
+License:
+Licensed under Apache License 2.0

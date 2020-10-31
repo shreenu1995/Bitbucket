@@ -1,0 +1,7 @@
+Project homepage: https://mvnrepository.com/artifact/org.mockito/mockito-all/1.10.19
+
+
+Sources: https://mvnrepository.com/artifact/org.mockito/mockito-all
+
+License:
+Licensed under MIT

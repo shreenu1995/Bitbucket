@@ -1,0 +1,7 @@
+Project homepage: https://mvnrepository.com/artifact/org.springframework/spring-jdbc/5.1.6.RELEASE
+
+
+Sources: https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+
+License:
+Licensed under Apache License 2.0

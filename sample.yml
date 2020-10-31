@@ -1,0 +1,12 @@
+ - hosts: all
+   become_method: sudo
+   tasks:
+   - name: Make sure that we can connect to the machine-ip
+     command: hostname
+     register: command_result
+     failed_when: "'FAILED' in command_result.stderr"
+     
+   - name: Run The shell script
+     copy:
+       src: /var/go/vijay.pem
+       dest: /home/ec2-user/vijay.pem

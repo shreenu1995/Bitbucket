@@ -1,0 +1,7 @@
+Project homepage: https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox/2.0.15
+
+Sources: https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox
+
+License:
+Licensed under Apache License 2.0
+                      

@@ -1,0 +1,7 @@
+Project https://mvnrepository.com/artifact/org.hibernate/hibernate-core/5.4.2.Final
+
+
+Sources: https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+
+License:
+Licensed under LGPL 2.1

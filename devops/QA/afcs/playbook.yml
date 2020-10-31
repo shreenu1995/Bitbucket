@@ -1,0 +1,25 @@
+- hosts: QA
+  vars:
+    provider:
+      registry: "{{ registry }}"
+      build_number: "{{build_number}}"
+  become_user: root
+  become: true
+  tasks:
+    - name: Make sure that we can connect to the machine
+      ping:
+
+    - name: stop previous version docker
+      shell: docker stop afcs
+    
+    - name: remove stopped container
+      shell: docker rm -f afcs
+
+    - name: docker login
+      shell: docker login -u admin -p admin123 192.168.0.91:8082
+
+    - name: pull docker image from docker repo
+      shell: docker pull {{registry}}/afcs:{{build_number}}
+
+    - name: create docker image
+      shell: docker run -d --name afcs -p 9095:9095 -v /home/afcs/afcs-server/docker-logs:/logs {{registry}}/afcs:{{build_number}}

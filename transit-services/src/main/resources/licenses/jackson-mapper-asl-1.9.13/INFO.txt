@@ -1,0 +1,7 @@
+Project homepage: 	https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl/1.9.13
+
+
+Sources: https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl
+
+License:
+Licensed under Apache License 2.0

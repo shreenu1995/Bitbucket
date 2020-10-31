@@ -1,0 +1,7 @@
+Project homepage: https://mvnrepository.com/artifact/org.postgresql/postgresql/42.2.5.jre7
+
+
+Sources: https://mvnrepository.com/artifact/org.postgresql/postgresql
+
+License:
+Licensed under POSTGRESQL

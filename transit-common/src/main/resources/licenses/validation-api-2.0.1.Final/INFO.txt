@@ -1,0 +1,6 @@
+Project homepage: https://mvnrepository.com/artifact/javax.validation/validation-api/2.0.1.Final
+
+Sources: https://mvnrepository.com/artifact/javax.validation/validation-api
+
+License:
+Licensed under Apache License 2.0

@@ -1,0 +1,31 @@
+- hosts: Demo
+  vars:
+    provider:
+      app: "{{ app }}"
+      build_number: "{{build_number}}"
+  become_user: root
+  become: true
+  tasks:
+    - name: Make sure that we can connect to the machine
+      ping: 
+      
+    - name: copy deploy file
+      copy:
+        src: deploy.yml
+        dest: /tmp/
+
+    - name: creating service
+      shell: kubectl get deployment {{app}}
+      register: result
+      ignore_errors: True     
+
+    - shell: kubectl create -f /tmp/deploy.yml --record=true
+      when: result|failed
+
+    - shell: kubectl set image deployment/{{app}} {{app}}=192.168.0.91:8082/{{app}}:{{build_number}}
+      when: result|succeeded
+      
+    - name: Remove the Deploy file
+      file:
+        path: /tmp/deploy.yml
+        state: absent
